@@ -23,6 +23,8 @@ sudo pacman -Syu sublime-text
 # Security Software
 #
 
+sudo pacman -Sy openvpn binwalk
+
 # John the Ripper
 cd ${BIN}
 if [ ! -d ./john ]; then
@@ -30,6 +32,11 @@ if [ ! -d ./john ]; then
 fi
 cd john
 git pull
+cd src
+./configure
+make -s clean && make -sj4
+cd ../run
+echo "export PATH=$PATH:`pwd`" >> $SHELLRC
 
 # Penetration Testing Framework
 cd ${BIN}
