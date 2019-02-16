@@ -8,4 +8,5 @@ if [ ! -f $SSHKEY ]; then
 fi
 
 # Is there a check to see if we already did this?
+# Also that probably only works for bash
 cat resources/ssh/ssh_agent_config.sh >> $SHELLRC
