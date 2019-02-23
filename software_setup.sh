@@ -8,7 +8,7 @@ source ./setup_env.sh
 #
 
 # Devel
-sudo pacman -Sy gcc python
+sudo pacman -Sy gcc python htop
 
 #
 # External software
@@ -23,7 +23,7 @@ sudo pacman -Syu sublime-text
 # Security Software
 #
 
-sudo pacman -Sy openvpn binwalk
+sudo pacman -Sy openvpn binwalk nmap
 
 # John the Ripper
 cd ${BIN}
@@ -33,12 +33,14 @@ fi
 cd john
 git pull
 cd src
-./configure
+sudo pacman -Sy opencl-headers bash-completion gmp
+sudo ./configure
 make -s clean && make -sj4
 cd ../run
 echo "export PATH=$PATH:`pwd`" >> $SHELLRC
 
 # Penetration Testing Framework
+sudo pacman -Sy libidn
 cd ${BIN}
 if [ ! -d ./ptf ]; then
 	git clone https://github.com/trustedsec/ptf
