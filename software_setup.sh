@@ -8,7 +8,10 @@ source ./setup_env.sh
 #
 
 # Devel
-sudo pacman -Sy gcc python htop
+sudo pacman -Sy gcc python go
+
+# General tools
+sudo pacman -Sy htop tmux p7zip libpst wget
 
 #
 # External software
@@ -38,6 +41,17 @@ sudo ./configure
 make -s clean && make -sj4
 cd ../run
 echo "export PATH=$PATH:`pwd`" >> $SHELLRC
+
+# Gobuster
+git clone https://github.com/OJ/gobuster.git
+cd gobuster
+make linux
+
+# Lists
+cd ~/
+mkdir -p resources
+cd resources
+git clone https://github.com/danielmiessler/SecLists.git seclists
 
 # Penetration Testing Framework
 sudo pacman -Sy libidn
