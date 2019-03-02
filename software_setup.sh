@@ -23,6 +23,12 @@ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable
 sudo pacman -Syu sublime-text
 
 #
+# Networking 
+#
+
+sudo pacman -Sy net-snmp dnsutils
+
+#
 # Security Software
 #
 
@@ -61,3 +67,10 @@ if [ ! -d ./ptf ]; then
 fi
 cd ptf
 git pull
+
+# DNS Recon
+cd ${BIN}
+if [ ! ./dnsrecon ]; then
+	git clone https://github.com/darkoperator/dnsrecon
+fi
+
