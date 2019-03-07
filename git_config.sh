@@ -1,6 +1,6 @@
 source ./setup_env.sh
 
-sudo pacman -Sy git
+sudo pacman -Syu git
 
 # The basics without which you can't run git
 git config --global user.email "$EMAIL"
