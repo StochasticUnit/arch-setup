@@ -8,10 +8,10 @@ source ./setup_env.sh
 #
 
 # Devel
-sudo pacman -Syu gcc python go
+sudo pacman -Sy gcc python go
 
 # General tools
-sudo pacman -Syu htop tmux p7zip libpst wget
+sudo pacman -Sy htop tmux p7zip libpst wget
 
 #
 # External software
@@ -20,18 +20,18 @@ sudo pacman -Syu htop tmux p7zip libpst wget
 # https://www.sublimetext.com/docs/3/linux_repositories.html#pacman
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-sudo pacman -Syu sublime-text
+sudo pacman -Sy sublime-text
 
 #
 # Networking 
 #
 
-sudo pacman -Syu net-snmp dnsutils
+sudo pacman -Sy net-snmp dnsutils
 
 # Turns out the version of curls packaged with arch doesn't have some
 # of the features you might want.  Let's pull and build from git!
 # TODO: uninstall the package manager version of curl
-sudo pacman -Syu c-ares
+sudo pacman -Sy c-ares
 cd ${BIN}
 if [ ! -d ./curl ]; then
 	git clone https://github.com/curl/curl.git
@@ -46,7 +46,7 @@ make -j8
 # Security Software
 #
 
-sudo pacman -Syu openvpn binwalk nmap
+sudo pacman -Sy openvpn binwalk nmap
 
 # John the Ripper
 cd ${BIN}
@@ -56,7 +56,7 @@ fi
 cd john
 git pull
 cd src
-sudo pacman -Syu opencl-headers bash-completion gmp
+sudo pacman -Sy opencl-headers bash-completion gmp
 sudo ./configure
 make -s clean && make -sj4
 cd ../run
@@ -74,7 +74,7 @@ cd resources
 git clone https://github.com/danielmiessler/SecLists.git seclists
 
 # Penetration Testing Framework
-sudo pacman -Syu libidn
+sudo pacman -Sy libidn
 cd ${BIN}
 if [ ! -d ./ptf ]; then
 	git clone https://github.com/trustedsec/ptf

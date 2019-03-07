@@ -1,6 +1,6 @@
 # Installing ssh and creating a new keypair
 
-sudo pacman -Syu openssh
+sudo pacman -Sy openssh
 
 if [ ! -f $SSHKEY ]; then
 	echo "Generating a new SSH keypair"
