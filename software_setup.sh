@@ -87,3 +87,12 @@ cd ${BIN}
 if [ ! ./dnsrecon ]; then
 	git clone https://github.com/darkoperator/dnsrecon
 fi
+
+# SMBMAP
+sudo pacman -Sy python2-pip
+cd ${BIN}
+if [ ! ./smbmap ]; then
+	git clone https://github.com/ShawnDEvans/smbmap.git
+fi
+cd smbmap
+pip2 install -r requirements.txt --user
