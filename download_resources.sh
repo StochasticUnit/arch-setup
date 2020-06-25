@@ -1,4 +1,12 @@
-if [ ! -d ${RESRC} ]; then
+#!/bin/bash
+
+set -ex
+
+if [ -z "$NARWHAL_SETUP_ENV" ]; then
+	source ./setup_env.sh
+fi
+
+if [ ! -d "${RESRC}" ]; then
 	mkdir -p ${RESRC}
 fi
 

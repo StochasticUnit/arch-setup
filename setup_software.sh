@@ -5,6 +5,7 @@
 # Dev and Languages
 sudo apt install git
 sudo apt install gcc python
+sudo apt install vim
 
 # Setup Golang
 sudo apt install golang
@@ -28,4 +29,7 @@ sudo apt install openvpn binwalk
 
 # Dev
 sudo apt install libssl-dev
+
+# Tools
+sudo apt install sqlmap
 
