@@ -1,6 +1,4 @@
-if [ -z "$NARWHAL_SETUP_ENV" ]; then
-	source ./setup_env.sh
-fi
+source ./setup_env.sh
 
 if [ ! -f $SSHKEY ]; then
 	echo "Generating a new SSH keypair"

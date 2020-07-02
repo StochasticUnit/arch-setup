@@ -2,9 +2,7 @@
 
 set -ex
 
-if [ -z "$NARWHAL_SETUP_ENV" ]; then
-	source ./setup_env.sh
-fi
+source ./setup_env.sh
 
 if [ ! -d "${RESRC}" ]; then
 	mkdir -p ${RESRC}

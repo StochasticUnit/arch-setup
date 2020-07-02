@@ -1,6 +1,4 @@
-if [ -z "$NARWHAL_SETUP_ENV" ]; then
-	. setup_env.sh
-fi
+. setup_env.sh
 
 if [ ! -f ~/.vimrc ]; then
 	touch ~/.vimrc
